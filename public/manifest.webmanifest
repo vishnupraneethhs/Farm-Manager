@@ -1,0 +1,18 @@
+{
+  "name": "Sri Sannidhi Farms",
+  "short_name": "Sannidhi",
+  "description": "Offline-capable farm management app for daily labor, spraying, expenses, and crop diagnosis.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#059669",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
