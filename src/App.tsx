@@ -9,8 +9,10 @@ import { MedicineSprayingScreen } from '@/screens/MedicineSprayingScreen';
 import { OtherExpensesScreen } from '@/screens/OtherExpensesScreen';
 import { DailyIncomeScreen } from '@/screens/DailyIncomeScreen';
 import { CropDoctorScreen } from '@/screens/CropDoctorScreen';
+import FarmChatScreen from '@/screens/FarmChatScreen';
 import { ConnectionIndicator } from '@/components/SyncBadge';
 import { syncAll, processPendingDoctorQueries } from '@/lib/sync';
+import { ChatFAB } from '@/components/ChatFAB';
 
 function LanguageToggle() {
   const { lang, setLang, t } = useApp();
@@ -96,6 +98,8 @@ function AppContent() {
       {role === 'manager' && (
         <ManagerViewWrapper tab={managerTab} setTab={setManagerTab} />
       )}
+      {/* Global floating AI chat button — always visible */}
+      <ChatFAB />
     </div>
   );
 }
@@ -110,6 +114,7 @@ function ManagerViewWrapper({ tab, setTab }: { tab: ManagerTab | null; setTab: (
         {tab === 'expense' && <OtherExpensesScreen />}
         {tab === 'income' && <DailyIncomeScreen />}
         {tab === 'doctor' && <CropDoctorScreen />}
+        {tab === 'chat' && <FarmChatScreen />}
       </div>
     );
   }

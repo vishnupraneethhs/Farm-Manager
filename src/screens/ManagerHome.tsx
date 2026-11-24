@@ -1,8 +1,8 @@
-import { Users, SprayCan, Receipt, Leaf, IndianRupee } from 'lucide-react';
+import { Users, SprayCan, Receipt, Leaf, IndianRupee, Sparkles } from 'lucide-react';
 import { useApp } from '@/lib/context';
 import type { TranslationKey } from '@/lib/i18n';
 
-export type ManagerTab = 'labor' | 'spray' | 'expense' | 'income' | 'doctor';
+export type ManagerTab = 'labor' | 'spray' | 'expense' | 'income' | 'doctor' | 'chat';
 
 interface Props {
   onSelect: (tab: ManagerTab) => void;
@@ -17,6 +17,7 @@ export function ManagerHome({ onSelect }: Props) {
     { tab: 'expense', key: 'otherExpenses', descKey: 'otherExpensesDesc', icon: Receipt, color: 'text-purple-600', bg: 'bg-purple-50' },
     { tab: 'income', key: 'dailyIncome', descKey: 'dailyIncomeDesc', icon: IndianRupee, color: 'text-emerald-600', bg: 'bg-emerald-50' },
     { tab: 'doctor', key: 'aiCropDoctor', descKey: 'aiCropDoctorDesc', icon: Leaf, color: 'text-green-600', bg: 'bg-green-50' },
+    { tab: 'chat', key: 'aiFarmAssistant', descKey: 'aiFarmAssistantDesc', icon: Sparkles, color: 'text-indigo-600', bg: 'bg-indigo-50' },
   ];
 
   return (

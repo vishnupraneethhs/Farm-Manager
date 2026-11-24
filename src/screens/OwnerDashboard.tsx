@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { Sprout, List, BarChart3, LogOut, IndianRupee } from 'lucide-react';
+import { Sprout, List, BarChart3, LogOut, IndianRupee, Sparkles } from 'lucide-react';
 import { useApp } from '@/lib/context';
 import { CropsManager } from './CropsManager';
 import { DailyLogs } from './DailyLogs';
 import { WeeklyExpenses } from './WeeklyExpenses';
 import { DailyIncomeScreen } from './DailyIncomeScreen';
+import FarmChatScreen from './FarmChatScreen';
 import { ConnectionIndicator } from '@/components/SyncBadge';
 
-type OwnerTab = 'crops' | 'income' | 'logs' | 'weekly';
+type OwnerTab = 'crops' | 'income' | 'logs' | 'weekly' | 'chat';
 
 export function OwnerDashboard() {
   const { t, setRole } = useApp();
@@ -18,6 +19,7 @@ export function OwnerDashboard() {
     { key: 'income', label: t('dailyIncome'), icon: IndianRupee },
     { key: 'logs', label: t('dailyLogs'), icon: List },
     { key: 'weekly', label: t('weeklyExpenses'), icon: BarChart3 },
+    { key: 'chat', label: t('aiFarmAssistant'), icon: Sparkles },
   ];
 
   return (
@@ -57,6 +59,7 @@ export function OwnerDashboard() {
         {tab === 'income' && <DailyIncomeScreen />}
         {tab === 'logs' && <DailyLogs />}
         {tab === 'weekly' && <WeeklyExpenses />}
+        {tab === 'chat' && <FarmChatScreen />}
       </div>
     </div>
   );
